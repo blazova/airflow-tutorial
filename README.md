@@ -20,7 +20,7 @@ This is the code for [Apache Airflow Tutorials](https://www.youtube.com/playlist
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-- Clone this repo
+- Fork + clone [this repo](https://github.com/tuanavu/airflow-tutorial)
 - Install the prerequisites
 - Run the service
 - Check http://localhost:8080
@@ -28,22 +28,21 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Install [Docker](https://www.docker.com/)
-- Install [Docker Compose](https://docs.docker.com/compose/install/)
-- Following the Airflow release from [Python Package Index](https://pypi.python.org/pypi/apache-airflow)
+- Install [Docker](https://www.docker.com/) (`brew install docker`)
+- Install [Docker Compose](https://docs.docker.com/compose/install/) (`brew install docker-compose`)
 
-### Usage
-
-Run the web service with docker
+### Instalation
 
 ```
-docker-compose up -d
-
-# Build the image
-# docker-compose up -d --build
+docker pull puckel/docker-airflow
 ```
 
 Check http://localhost:8080/
+
+```
+docker run -d -p 8080:8080 puckel/docker-airflow webserver
+```
+
 
 - `docker-compose logs` - Displays log output
 - `docker-compose ps` - List containers
